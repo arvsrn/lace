@@ -1,3 +1,7 @@
+pub mod lace;
+
+
 fn main() {
-    println!("Hello, world!");
+    let source = lace::io::Source::new("src/main.rs");
+    println!("{source:?}");
 }
