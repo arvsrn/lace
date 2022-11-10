@@ -1,6 +1,7 @@
 #[derive(Debug, PartialEq)]
 pub enum Kind {
     Identifier,
+    Integer,
     String,
     Assign,
     Semicolon,
@@ -20,6 +21,7 @@ pub enum Kind {
     LessThanOrEqual,
     GreaterThan,
     LessThan,
+    Newline,
     EOF,
 }
 
@@ -32,7 +34,7 @@ pub struct Token {
 }
 
 impl Token {
-    fn new(kind: Kind, text: String, value: Option<isize>, position: (usize, usize)) -> Self {
+    pub fn new(kind: Kind, text: String, value: Option<isize>, position: (usize, usize)) -> Self {
         Self {
             kind,
             text,
